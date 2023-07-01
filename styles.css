@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+*,::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+    url(./assets/hero-bcg.jpeg) center/cover no-repeat;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*nav*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.img-container {
+
+}
+
+.img-container img {
+    width: 5rem;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul a {
+    text-transform: uppercase;
+    color: #f1f1f1;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.3s ease-in;
+}
+
+ul a:hover {
+    color: #333;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle span {
+    display: block;
+    align-items: center;
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+
+/*details*/
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 8rem;
+}
+
+.details h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #f1f1f1;
+}
+
+.details p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #f1f1f1;
+}
+
+.details a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+    padding: 0.6rem;
+    background-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.2s ease-in;
+}
+
+.details a:hover {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+@media screen and (max-width:890px) {
+    nav ul {
+        display: none;
+    }
+    .nav-toggle {
+        display: block;
+        padding-top: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease-in;
+    }
+    .nav-toggle:hover span {
+        background-color: #f1f1f1;
+    }
+}
+
+@media screen and (max-width:890px) {
+    .details h1 {
+        font-size: 2rem;
+    }
+    .details {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    nav {
+        padding: 2rem;
+    }
+}
+
+
+
