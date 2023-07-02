@@ -7,14 +7,20 @@
 }
 
 body {
-    background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
-    url(./assets/hero-bcg.jpeg) center/cover no-repeat;
+    background: #f5a54a;
     height: 100vh;
     font-family: "Roboto", sans-serif;
+    position: relative;
 }
 
 a {
     text-decoration: none;
+}
+
+.stroke_text {
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #f1f1f1;
 }
 
 /*nav*/
@@ -25,8 +31,9 @@ nav {
     padding: 2rem 4rem;
 }
 
-.img-container {
-
+.img-container span {
+    font-weight: bold;
+    color: #333;
 }
 
 .img-container img {
@@ -69,45 +76,94 @@ ul a:hover {
     background-color: #333;
 }
 
+.hero {
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    bottom: 0;
+    overflow: hidden;
+}
+
 /*details*/
 
 .details {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 1.5rem;
-    padding-top: 8rem;
+    gap: 3rem;
+    padding-top: 7rem;
+    padding-left: 2rem;
 }
 
 .details h1 {
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #f1f1f1;
 }
 
 .details p {
-    text-align: center;
+    text-align: left;
     font-size: 1.2rem;
     color: #f1f1f1;
 }
 
-.details a {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #f1f1f1;
-    border: 2px solid #f1f1f1;
-    padding: 0.6rem;
-    background-color: transparent;
-    font-weight: bold;
-    text-align: center;
-    transition: 0.2s ease-in;
+.details .input-group{
+    display: flex;
 }
 
-.details a:hover {
-    background-color: #f1f1f1;
+input[type="email"] {
+    display: block;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    background-color: greenyellow;
+    outline: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    border-radius: 0 15px 15px 0;
+    border: none;
+    padding: 0 3rem;
+    background-color: #f32727;
     color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background: #fd5d5d;
+}
+
+/*overlay*/
+
+.overlay {
+    width: 40rem;
+    height: 80vh;
+    border-radius: 100% 0 0 0;
+    background: #333;
+    position: relative;
+}
+
+.overlay img {
+    width: 10rem;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1040px) {
+    .overlay {
+        width: 30rem;
+    }
 }
 
 @media screen and (max-width:890px) {
@@ -127,7 +183,7 @@ ul a:hover {
 
 @media screen and (max-width:890px) {
     .details h1 {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
     .details {
         padding-left: 1rem;
@@ -135,6 +191,44 @@ ul a:hover {
     }
     nav {
         padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 884px) {
+    .overlay {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .details {
+        margin-bottom: 1.5rem;
+    }
+    .hero {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        bottom: 0;
+        overflow: hidden;
+    }
+    .overlay {
+        height: 15vh;
+        width: 100%;
+        transform: scale(1.5);
+        border-radius: 80% 80% 0 0;
+    }
+    .overlay img {
+        display: none;
+    }
+    .details h1, .details p {
+        text-align: center;
+    }
+    .input-group {
+        justify-content: center;
+        align-items: center;
+    }
+    input[type="submit"] {
+        height: 2.5rem;
     }
 }
 
